@@ -10,8 +10,7 @@
     <packaging>war</packaging>
          <distributionManagement>
              <repository>
-                 <id>us_booking-libs-release</id>
-                 <name>a0dmm0uhxaks5-artifactory-primary-0-releases</name>
+                 <id>bus_booking-libs-release</id>
                  <url>https://trialvvjw1c.jfrog.io/artifactory/bus_booking-libs-release</url>
              </repository>
          </distributionManagement>
