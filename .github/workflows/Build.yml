@@ -37,13 +37,17 @@ jobs:
       # Build the project with Maven
       - name: Build with Maven
         run: mvn clean install
-
+      # Upload the WAR as an artifact using v4
+      - name: Upload WAR file to Artifactory
+        run: |
+          curl -u "${{ secrets.ARTIFACTORY_USERNAME }}:${{ secrets.ARTIFACTORY_API_KEY }}" -T "target/bus-booking-app-1.0.2.war" "https://trialvvjw1c.jfrog.io/artifactory/bus_booking-libs-snapshot/com/jfrog/my-jfrog-app/bus-booking-app-1.0.${{ github.run_number }}.war"
+     
       # Upload the JAR as an artifact using v4
       - name: Upload JAR as artifact
         uses: actions/upload-artifact@v4
         with:
           name: bus-booking-app
-          path: target/bus-booking-app-1.0-SNAPSHOT.jar
+          path: target/bus-booking-app-1.0.2.war
 
       # Run the Spring Boot application
       - name: Run Spring Boot App
