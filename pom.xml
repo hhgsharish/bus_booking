@@ -51,7 +51,13 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>a0dmm0uhxaks5-artifactory-primary-0-releases</name>
+        <url>https://trialvvjw1c.jfrog.io/artifactory/bus_booking-libs-release</url>
+    </repository>
+</distributionManagement>
     <!-- Build Section -->
     <build>
         <plugins>
